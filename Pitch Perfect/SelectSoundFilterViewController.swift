@@ -43,10 +43,6 @@ class SelectSoundFilterViewController: UIViewController {
         executeRatePitchAwarePlayback(1.0, pitch: -500.0)
     }
     
-    @IBAction func playEchoFilteredAudio(sender: UIButton) {
-        executeEchoedPlayback()
-    }
-    
     @IBAction func playReverbFilteredAudio(sender: UIButton) {
         executeReverbPlayback()
     }
@@ -83,20 +79,6 @@ class SelectSoundFilterViewController: UIViewController {
         
         engine.startAndReturnError(nil)
         audioPlayer.play()
-    }
-    
-    func executeEchoedPlayback() {
-        stopEngine()
-
-//        var audioPlayer = AVAudioPlayer(contentsOfURL: audioFile.url, error: nil)
-//        
-//        var audioPlayer2 = AVAudioPlayer(contentsOfURL: audioFile.url, error: nil)
-//        
-//        audioPlayer.prepareToPlay()
-//        audioPlayer.play()
-//        
-//        audioPlayer2.prepareToPlay()
-//        audioPlayer2.playAtTime(audioPlayer.deviceCurrentTime + 0.1)
     }
     
     func executeReverbPlayback() {

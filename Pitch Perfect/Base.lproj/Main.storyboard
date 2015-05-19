@@ -193,15 +193,6 @@
                                     <action selector="playVaderFilteredAudio:" destination="269-we-auF" eventType="touchUpInside" id="QUO-Cd-lEM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VM4-Pt-0aT">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" image="echo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playEchoFilteredAudio:" destination="269-we-auF" eventType="touchUpInside" id="zQM-LQ-Wti"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOD-vp-Qpy">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="reverb">
@@ -225,19 +216,17 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="McE-CX-AkZ" secondAttribute="trailing" constant="30" id="1Mb-W1-NEH"/>
                             <constraint firstItem="CwN-nA-Qoq" firstAttribute="top" secondItem="fNZ-04-iiy" secondAttribute="bottom" constant="8" symbolic="YES" id="2Yj-dw-e73"/>
-                            <constraint firstItem="VM4-Pt-0aT" firstAttribute="top" secondItem="CwN-nA-Qoq" secondAttribute="bottom" constant="8" symbolic="YES" id="76A-dE-ZmO"/>
                             <constraint firstItem="fNZ-04-iiy" firstAttribute="top" secondItem="XcT-FB-NLt" secondAttribute="bottom" constant="31" id="Bd3-pb-NLL"/>
-                            <constraint firstItem="VM4-Pt-0aT" firstAttribute="leading" secondItem="5Av-or-DoA" secondAttribute="leadingMargin" constant="30" id="FNV-f7-ptS"/>
+                            <constraint firstItem="OOD-vp-Qpy" firstAttribute="top" secondItem="G1L-lH-LkY" secondAttribute="top" id="EG4-g1-vn5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jHI-9B-cxk" secondAttribute="trailing" constant="30" id="IUm-DO-lhh"/>
                             <constraint firstItem="G1L-lH-LkY" firstAttribute="leading" secondItem="5Av-or-DoA" secondAttribute="leadingMargin" constant="30" id="X68-LI-9ge"/>
                             <constraint firstAttribute="centerY" secondItem="7Ei-lF-xIF" secondAttribute="centerY" constant="-230" id="Y5j-zq-7a5"/>
-                            <constraint firstItem="G1L-lH-LkY" firstAttribute="top" secondItem="VM4-Pt-0aT" secondAttribute="bottom" constant="8" symbolic="YES" id="ZwZ-iJ-kkh"/>
                             <constraint firstItem="aMy-Uk-l2L" firstAttribute="top" secondItem="7Ei-lF-xIF" secondAttribute="bottom" constant="20" id="bsk-3u-1hE"/>
                             <constraint firstItem="fNZ-04-iiy" firstAttribute="leading" secondItem="5Av-or-DoA" secondAttribute="leadingMargin" constant="30" id="dLB-dT-TN8"/>
-                            <constraint firstItem="OOD-vp-Qpy" firstAttribute="top" secondItem="VM4-Pt-0aT" secondAttribute="top" id="j3h-04-1ur"/>
                             <constraint firstItem="7Ei-lF-xIF" firstAttribute="centerX" secondItem="5Av-or-DoA" secondAttribute="centerX" id="tYJ-Zp-jSe"/>
                             <constraint firstItem="McE-CX-AkZ" firstAttribute="top" secondItem="XcT-FB-NLt" secondAttribute="bottom" constant="31" id="ube-hu-GxE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OOD-vp-Qpy" secondAttribute="trailing" constant="30" id="vGw-Kx-XWI"/>
+                            <constraint firstItem="OOD-vp-Qpy" firstAttribute="top" secondItem="jHI-9B-cxk" secondAttribute="bottom" constant="8" symbolic="YES" id="xaO-rR-ncx"/>
                             <constraint firstItem="CwN-nA-Qoq" firstAttribute="leading" secondItem="5Av-or-DoA" secondAttribute="leadingMargin" constant="30" id="yiS-ih-wVY"/>
                             <constraint firstItem="CwN-nA-Qoq" firstAttribute="top" secondItem="jHI-9B-cxk" secondAttribute="top" id="zKl-TP-yms"/>
                         </constraints>
@@ -248,7 +237,6 @@
                                 <exclude reference="7Ei-lF-xIF"/>
                                 <exclude reference="CwN-nA-Qoq"/>
                                 <exclude reference="jHI-9B-cxk"/>
-                                <exclude reference="VM4-Pt-0aT"/>
                                 <exclude reference="OOD-vp-Qpy"/>
                                 <exclude reference="G1L-lH-LkY"/>
                             </mask>
@@ -260,13 +248,11 @@
                                 <exclude reference="zKl-TP-yms"/>
                                 <exclude reference="1Mb-W1-NEH"/>
                                 <exclude reference="ube-hu-GxE"/>
-                                <exclude reference="76A-dE-ZmO"/>
-                                <exclude reference="FNV-f7-ptS"/>
-                                <exclude reference="IUm-DO-lhh"/>
-                                <exclude reference="j3h-04-1ur"/>
-                                <exclude reference="vGw-Kx-XWI"/>
                                 <exclude reference="X68-LI-9ge"/>
-                                <exclude reference="ZwZ-iJ-kkh"/>
+                                <exclude reference="IUm-DO-lhh"/>
+                                <exclude reference="EG4-g1-vn5"/>
+                                <exclude reference="vGw-Kx-XWI"/>
+                                <exclude reference="xaO-rR-ncx"/>
                                 <exclude reference="Y5j-zq-7a5"/>
                                 <exclude reference="tYJ-Zp-jSe"/>
                                 <exclude reference="bsk-3u-1hE"/>
@@ -279,7 +265,6 @@
                                 <include reference="7Ei-lF-xIF"/>
                                 <include reference="CwN-nA-Qoq"/>
                                 <include reference="jHI-9B-cxk"/>
-                                <include reference="VM4-Pt-0aT"/>
                                 <include reference="OOD-vp-Qpy"/>
                                 <include reference="G1L-lH-LkY"/>
                             </mask>
@@ -291,13 +276,11 @@
                                 <include reference="zKl-TP-yms"/>
                                 <include reference="1Mb-W1-NEH"/>
                                 <include reference="ube-hu-GxE"/>
-                                <include reference="76A-dE-ZmO"/>
-                                <include reference="FNV-f7-ptS"/>
-                                <include reference="IUm-DO-lhh"/>
-                                <include reference="j3h-04-1ur"/>
-                                <include reference="vGw-Kx-XWI"/>
                                 <include reference="X68-LI-9ge"/>
-                                <include reference="ZwZ-iJ-kkh"/>
+                                <include reference="IUm-DO-lhh"/>
+                                <include reference="EG4-g1-vn5"/>
+                                <include reference="vGw-Kx-XWI"/>
+                                <include reference="xaO-rR-ncx"/>
                                 <include reference="Y5j-zq-7a5"/>
                                 <include reference="tYJ-Zp-jSe"/>
                                 <include reference="bsk-3u-1hE"/>
@@ -331,7 +314,6 @@
     <resources>
         <image name="chipmunk" width="100" height="100"/>
         <image name="distortion" width="100" height="100"/>
-        <image name="echo" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="rabbit" width="100" height="100"/>
         <image name="reverb" width="100" height="100"/>

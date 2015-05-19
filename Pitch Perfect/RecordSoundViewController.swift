@@ -17,17 +17,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     
     var audioRecorder : AVAudioRecorder!
     var recordedAudio : RecordedAudio!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+        
     override func viewWillAppear(animated: Bool) {
         stopButton.hidden = true
         recordButton.enabled = true
@@ -39,13 +29,8 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         recordButton.enabled = false
         recordingLabel.text = "Recording"
         
-        //NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "timerDidFire", userInfo: nil, repeats: true);
-        
         performRecord()
     }
-    
-//    func timerDidFire() {
-//    }
     
     func performRecord() {
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
