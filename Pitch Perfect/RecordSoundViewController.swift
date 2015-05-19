@@ -33,19 +33,14 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     func performRecord() {
-        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        // create recording filename
+        let filePath = generateRecordingFilename()
         
-        let currentDateTime = NSDate()
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "ddMMyyyy-HHmmss"
-        let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
-        let pathArray = [dirPath, recordingName]
-        let filePath = NSURL.fileURLWithPathComponents(pathArray)
-        println(filePath)
-        
+        // create audio session
         var session = AVAudioSession.sharedInstance()
         session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
         
+        // prepare to record
         audioRecorder = AVAudioRecorder(URL: filePath, settings: nil, error: nil)
         audioRecorder.delegate = self
         audioRecorder.meteringEnabled = true
@@ -53,10 +48,21 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
     }
     
+    func generateRecordingFilename() -> NSURL? {
+        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        let currentDateTime = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "ddMMyyyy-HHmmss"
+        let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
+        let pathArray = [dirPath, recordingName]
+        let filePath = NSURL.fileURLWithPathComponents(pathArray)
+        
+        return filePath
+    }
+    
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         if (flag) {
             recordedAudio = RecordedAudio(url: recorder.url, title: recorder.url.lastPathComponent!)
-            
             self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
         } else {
             println("*** file failed to record successfully! ***")

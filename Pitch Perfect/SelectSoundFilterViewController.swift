@@ -63,15 +63,18 @@ class SelectSoundFilterViewController: UIViewController {
     func executeDistoredPlayback() {
         stopEngine()
         
+        // create and attach the audio player node
         var audioPlayer = AVAudioPlayerNode()
         audioPlayer.volume = 1.0;
         engine.attachNode(audioPlayer)
         
+        // create and attach the distortion node
         var distortion = AVAudioUnitDistortion()
         distortion.wetDryMix = 50
         distortion.preGain = 0
         engine.attachNode(distortion)
         
+        // connect nodes in engine
         engine.connect(audioPlayer, to: distortion, format: nil)
         engine.connect(distortion, to: engine.outputNode, format: nil)
         
@@ -84,14 +87,17 @@ class SelectSoundFilterViewController: UIViewController {
     func executeReverbPlayback() {
         stopEngine()
         
+        // create and attach the audio player node
         var audioPlayer = AVAudioPlayerNode()
         audioPlayer.volume = 1.0;
         engine.attachNode(audioPlayer)
         
+        // create and attach the reverb node
         var reverb = AVAudioUnitReverb()
         reverb.wetDryMix = 50
         engine.attachNode(reverb)
         
+        // connect nodes in engine
         engine.connect(audioPlayer, to: reverb, format: nil)
         engine.connect(reverb, to: engine.outputNode, format: nil)
         
@@ -104,15 +110,18 @@ class SelectSoundFilterViewController: UIViewController {
     func executeRatePitchAwarePlayback(rate: Float, pitch: Float = 1.0) {
         stopEngine()
         
+        // create and attach the audio player node
         var audioPlayer = AVAudioPlayerNode()
         audioPlayer.volume = 1.0;
         engine.attachNode(audioPlayer)
         
+        // create and attach unit time pitch node
         var unitTimePitch = AVAudioUnitTimePitch()
         unitTimePitch.rate = rate
         unitTimePitch.pitch = pitch
         engine.attachNode(unitTimePitch)
         
+        // connect nodes in engine
         engine.connect(audioPlayer, to: unitTimePitch, format: nil)
         engine.connect(unitTimePitch, to: engine.outputNode, format: nil)
         
